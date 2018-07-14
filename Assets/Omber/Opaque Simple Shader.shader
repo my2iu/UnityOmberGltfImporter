@@ -1,7 +1,11 @@
-﻿Shader "Unlit/Omber/Alpha Shader"
+﻿Shader "Unlit/Opaque Simple Shader"
 {
-    // The Omber Alpha Shader is for rendering shapes and textures with 
-    // transparency. It will render after all objects with the opaque shader.
+    // If all triangles in a model are in back-to-front order, and all objects
+    // are rendered back-to-front, and the hardware also renders all triangles
+    // in order (I'm not 100% sure when this is true), then this simpler shader
+    // might work well. It specifically does not use a depth buffer and relies
+    // on the assumption of things rendering in-order to ensure that objects
+    // are ordered consistently.
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
@@ -11,6 +15,8 @@
         Tags { "Queue"="Transparent" "RenderType"="Transparent" }
         LOD 100
         Cull Off
+        ZWrite Off
+        ZTest Always
         Blend SrcAlpha OneMinusSrcAlpha
 
         Pass

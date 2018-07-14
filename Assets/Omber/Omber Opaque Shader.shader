@@ -1,5 +1,8 @@
 ﻿Shader "Unlit/Omber/Opaque Shader"
 {
+    // The Omber Opaque Shader renders shapes with no transparency, so no
+    // alpha blending is needed and shapes can be rendered in any order since
+    // the depth buffer will ensure that closer objects remain in front.
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
