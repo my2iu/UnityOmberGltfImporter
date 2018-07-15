@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Opaque Simple Shader"
+﻿Shader "Unlit/Omber/Simple Shader"
 {
     // If all triangles in a model are in back-to-front order, and all objects
     // are rendered back-to-front, and the hardware also renders all triangles
