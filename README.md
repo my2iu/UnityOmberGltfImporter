@@ -12,7 +12,7 @@ Finally, drag your `.glb` files into the Unity project window, and they will be 
 
 ## Provided Shaders
 
-3d model meshes imported from Omber require special shaders because the default shaders provided by Unity cannot render vertex colors, which is needed for Omber's gradients. The Omber Unity package contains two sets of shaders for rendering the imported meshes. They can be found in the `Unlit/Omber` category of shaders.
+3d model meshes imported from Omber require special shaders because the default shaders provided by Unity cannot render vertex colors, which are needed for Omber's gradients. The Omber Unity package contains two sets of shaders for rendering the imported meshes. They can be found in the `Unlit/Omber` category of shaders.
 
 The Omber Opaque/Alpha Shaders are the default shaders used by the importer. These shaders treat the imported meshes as normal 3d meshes. Which mesh is rendered in front of the other is determined by their Z-position. You must assign different Z-values to every object yourself to ensure that nearer objects are, in fact, rendered in front of objects behind it. Opaque objects can be rendered in any order, but meshes that make use of transparency must be rendered separately after all opaque objects. Because of a lack of precision in the depth buffer, it may sometimes be necessary to scale the Z values of a mesh to ensure that all the layers of the mesh are sufficiently far apart that they have different Z values in the depth buffer.
 
